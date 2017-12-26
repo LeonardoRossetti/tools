@@ -136,3 +136,15 @@ Marcado para "Não usar servidor proxy para endereços locais".
 
 ### Portas utilizadas
  * No cmd: netstat -a
+
+
+ ## Oracle
+
+ ### Como ver conexões ativas:
+`
+ SELECT SID, Serial#, UserName, Status, SchemaName, Logon_Time
+FROM V$Session
+WHERE 
+Status='ACTIVE' AND
+UserName IS NOT NULL;
+`
