@@ -120,13 +120,10 @@ O MySQL está para se tornar pago, logo os criadores do MySQL criaram outro banc
 * **Ctrl+Alt+H:** (é necessário estar no modo de visualização: Java EE) > pesquisa no workspace por todas as ocorrências do elemento sobre o qual o cursor está posicionado.
 * **Ctls+Shift+O:** add imports
 
-
 ## Gerais
 
   * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
  
-
-
 ## IIS
  * Reiniciar IIS: iisreset
 
@@ -136,7 +133,6 @@ Marcado para "Não usar servidor proxy para endereços locais".
 
 ### Portas utilizadas
  * No cmd: netstat -a
-
 
  ## Oracle
 
@@ -148,3 +144,31 @@ WHERE
 Status='ACTIVE' AND
 UserName IS NOT NULL;
 `
+
+### How to create a sequence in oracle
+`create sequence TESTE_SEQ
+minvalue 1
+maxvalue 9999999999
+start with 1
+increment by 1
+nocache
+cycle;
+`
+
+**Where:**
+* minvalue = Valor minimo
+* max value = valor máximo que poderá chegar
+* start with = valor inicial
+* increment by 1 = (incremento), se este valor for 2, a sequence será incrementada como; 1,3,5,7,…
+* CYCLE = Sequencia será recomeçada ao atingir o valor maximo
+* NO CYCLE = default
+* OWNED BY table.col = Associa a uma coluna
+* OWNED BY NONE = sem associação
+<br>
+**How to increment sequence**
+`
+SELECT TESTE_SEQ.Nextval
+-- Caso for testar no PL-SQL ou outro programa acrescente um from dual para obter o resultado.
+SELECT TESTE_SEQ.Nextval FROM DUAL
+`
+
