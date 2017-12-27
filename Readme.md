@@ -146,14 +146,15 @@ UserName IS NOT NULL;
 `
 
 ### How to create a sequence in oracle
-`create sequence TESTE_SEQ
+```
+create sequence TESTE_SEQ
 minvalue 1
 maxvalue 9999999999
 start with 1
 increment by 1
 nocache
 cycle;
-`
+```
 
 **Where:**
 * minvalue = Valor minimo
