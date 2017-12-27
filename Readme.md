@@ -166,9 +166,9 @@ cycle;
 * OWNED BY NONE = sem associação
 
 ### How to increment sequence
-`
+```
 SELECT TESTE_SEQ.Nextval
 -- Caso for testar no PL-SQL ou outro programa acrescente um from dual para obter o resultado.
 SELECT TESTE_SEQ.Nextval FROM DUAL
-`
+```
 
