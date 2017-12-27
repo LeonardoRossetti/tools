@@ -164,8 +164,8 @@ cycle;
 * NO CYCLE = default
 * OWNED BY table.col = Associa a uma coluna
 * OWNED BY NONE = sem associação
-<br>
-**How to increment sequence**
+
+### How to increment sequence
 `
 SELECT TESTE_SEQ.Nextval
 -- Caso for testar no PL-SQL ou outro programa acrescente um from dual para obter o resultado.
