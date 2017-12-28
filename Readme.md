@@ -138,7 +138,7 @@ Marcado para "Não usar servidor proxy para endereços locais".
 
  ### Como ver conexões ativas:
 ```
- SELECT SID, Serial#, UserName, Status, SchemaName, Logon_Time
+SELECT SID, Serial#, UserName, Status, SchemaName, Logon_Time
 FROM V$Session
 WHERE 
 Status='ACTIVE' AND
@@ -173,3 +173,17 @@ SELECT TESTE_SEQ.Nextval
 SELECT TESTE_SEQ.Nextval FROM DUAL
 ```
 
+## Certificado digital
+
+###
+É possível alterar a senha de certificados digitais do tipo A1 da seguinte forma:
+ * Importar o certificado marcando a opção: "Marcar essa chave como exportável".
+ * Abrir o WIN + R: MMC <enter>
+ * No menu Arquivo, clique em Adicionar/Remover Snap In. Clique em Adicionar.
+ * Pessoal > Certificados (localizar o certificado desejado)
+ * Botão direito > Todas as tarefas > Exportar > Sim, exportar a chave privada 
+ * Marcar as opções: 
+ 	* Incluir todos os certificados no caminho de certificação, se possível
+ 	* Exportar todas as propriedades estendidas
+ * Avançar > Informar a nova senha
+ * Definir um local para salvar e o nome do arquivo 
