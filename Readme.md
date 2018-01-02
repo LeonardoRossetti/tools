@@ -173,10 +173,19 @@ SELECT TESTE_SEQ.Nextval
 SELECT TESTE_SEQ.Nextval FROM DUAL
 ```
 
+# Windows
+
+## Generals
+
+### Excluir serviços do windows
+ * Run the CMD as an administrator
+ ```
+ sc delete <service's name>
+ ```
+ 
 ## Certificado digital
 
-###
-É possível alterar a senha de certificados digitais do tipo A1 da seguinte forma:
+### É possível alterar a senha de certificados digitais do tipo A1 da seguinte forma:
  * Importar o certificado marcando a opção: "Marcar essa chave como exportável".
  * Abrir o WIN + R: MMC <enter>
  * No menu Arquivo, clique em Adicionar/Remover Snap In. Clique em Adicionar.
@@ -187,3 +196,6 @@ SELECT TESTE_SEQ.Nextval FROM DUAL
  	* Exportar todas as propriedades estendidas
  * Avançar > Informar a nova senha
  * Definir um local para salvar e o nome do arquivo 
+
+
+ 
