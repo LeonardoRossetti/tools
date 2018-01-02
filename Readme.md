@@ -124,16 +124,6 @@ O MySQL está para se tornar pago, logo os criadores do MySQL criaram outro banc
 
   * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
  
-## IIS
- * Reiniciar IIS: iisreset
-
-### Proxy
- * Opções da Internet -> Conexões -> Configurações da LAN <br>
-Marcado para "Não usar servidor proxy para endereços locais".
-
-### Portas utilizadas
- * No cmd: netstat -a
-
  ## Oracle
 
  ### Como ver conexões ativas:
@@ -182,6 +172,17 @@ SELECT TESTE_SEQ.Nextval FROM DUAL
  ```
  sc delete <service's name>
  ```
+
+## IIS
+ * Reiniciar IIS (CMD): iisreset
+
+### Proxy
+ * Opções da Internet -> Conexões -> Configurações da LAN <br>
+Marcado para "Não usar servidor proxy para endereços locais".
+
+### Portas utilizadas
+ * No cmd: netstat -a
+
  
 ## Certificado digital
 
