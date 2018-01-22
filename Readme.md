@@ -124,6 +124,11 @@ O MySQL está para se tornar pago, logo os criadores do MySQL criaram outro banc
 
   * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
  
+ ## SQL Server
+ 
+ ### Como alterar as propriedades da instância 
+ Caso não estiver conseguindo logar no sql server com o usuário 'sa' pode ser por que a instancia está configurada para apenas autenticação do windows. Para corrigir isso, logar com autenticação windows e depois clicar com botão direito sobre a instancia '.\sqlexpress' (ou outra) -> Propriedades -> Segurança -> Selecionar: Modo de autenticação do Sql Server e do windows
+ 
  ## Oracle
 
  ### Como ver conexões ativas:
