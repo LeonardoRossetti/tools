@@ -97,6 +97,9 @@ O MySQL está para se tornar pago, logo os criadores do MySQL criaram outro banc
  * Para ver todos os branches remotos:
 	**git branch -r**
 
+ * Para ver as mudanças de um arquivo por vez:
+	**git diff arquivo.txt**
+
  * For delete a local branch:
 	**git branch -d + name_local_branch**
 	
