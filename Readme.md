@@ -183,7 +183,7 @@ SELECT TESTE_SEQ.Nextval FROM DUAL
 ```
 exp usuario_backup/senha@banco file=c:\base.dmp log=c:\base.log
 ```
-#### How to import da dump
+#### How to import a dump
 ```
 imp usuario_destino_restore/senha@banco file=c:\base.dmp log=c:\base.log commit=y fromuser=usuario_backup touser=usuario_destino_restore
 ```
