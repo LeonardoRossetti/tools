@@ -175,8 +175,8 @@ SELECT TESTE_SEQ.Nextval FROM DUAL
 * Open CMD
 * lsnrctl status 
 * sqlplus sys/12345678 as sysdba
-* create user <name user> identified by <pwd user>;
-* grant dba to <name user>;
+* create user < name user > identified by <pwd user>;
+* grant dba to < name user >;
 
 
 
