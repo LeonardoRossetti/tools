@@ -171,6 +171,16 @@ SELECT TESTE_SEQ.Nextval
 SELECT TESTE_SEQ.Nextval FROM DUAL
 ```
 
+### How to create user oracle
+* Open CMD
+* lsnrctl status 
+* sqlplus sys/12345678 as sysdba
+* create user <name user> identified by <pwd user>;
+* grant dba to <name user>;
+
+
+
+
 # Windows
 
 ## Generals
