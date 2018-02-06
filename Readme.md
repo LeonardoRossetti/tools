@@ -187,7 +187,10 @@ exp usuario_backup/senha@banco file=c:\base.dmp log=c:\base.log
 ```
 imp usuario_destino_restore/senha@banco file=c:\base.dmp log=c:\base.log commit=y fromuser=usuario_backup touser=usuario_destino_restore
 ```
-
+**ex:**
+```
+imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP log=C:\Publica\base_Felipe\base.log commit=y fromuser=sdenew10 touser=sdefelipelocal
+```
 
 # Windows
 
