@@ -178,7 +178,15 @@ SELECT TESTE_SEQ.Nextval FROM DUAL
 * create user < name user > identified by < pwd user >;
 * grant dba to < name user >;
 
-
+### Backup
+#### How to create a dump
+```
+exp usuario_backup/senha@banco file=c:\base.dmp log=c:\base.log
+```
+#### How to import da dump
+```
+imp usuario_destino_restore/senha@banco file=c:\base.dmp log=c:\base.log commit=y fromuser=usuario_backup touser=usuario_destino_restore
+```
 
 
 # Windows
