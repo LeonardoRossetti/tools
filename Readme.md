@@ -201,7 +201,7 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 * **To create a page automatically:** ionic generate page my-page-name
  
 
- 
+
 # Windows
 
 ## Generals
@@ -237,5 +237,7 @@ Marcado para "Não usar servidor proxy para endereços locais".
  * Avançar > Informar a nova senha
  * Definir um local para salvar e o nome do arquivo 
 
+### Tips
+ * **Keyboard shortcut to duplicate a line:** Shift + Alt + ↓(on keyboard)
 
  
