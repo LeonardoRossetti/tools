@@ -133,8 +133,11 @@ imp usuario_destino_restore/senha@banco file=c:\base.dmp log=c:\base.log commit=
 imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP log=C:\Publica\base_Felipe\base.log commit=y fromuser=sdenew10 touser=sdefelipelocal
 ```
 
+## Gerais
 
-## Git
+  * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
+
+# Git
 
  ### Para fazer um commit de qualquer alteração:
 1. Para criar e já mudar para o branch: 
@@ -179,6 +182,7 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 	**git push origin --tags**
 
 
+# Languages
 ## Java
 
 ### Atalhos:
@@ -190,11 +194,13 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 * **Ctrl + Shift + H:** para pesquisar qualquer arquivo fonte dentro do workspace
 * **Ctrl+Alt+H:** (é necessário estar no modo de visualização: Java EE) > pesquisa no workspace por todas as ocorrências do elemento sobre o qual o cursor está posicionado.
 * **Ctls+Shift+O:** add imports
-
-## Gerais
-
-  * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
  
+## IONIC
+
+### Tips
+* **To create a page automatically:** ionic generate page my-page-name
+ 
+
  
 # Windows
 
