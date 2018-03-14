@@ -1,5 +1,7 @@
 ### Para acessar o [projeto](https://curso-node1.herokuapp.com/)
 
+# Databases
+
 ## MongoDB
 
  ### Para montar o ambiente:
@@ -66,68 +68,7 @@ O MySQL está para se tornar pago, logo os criadores do MySQL criaram outro banc
  	* HeidiSql
  	* Navicat
 
-## Git
-
- ### Para fazer um commit de qualquer alteração:
-1. Para criar e já mudar para o branch: 
-	``` 
-	git checkout -b bugfix/1361
-	``` 
-2. Remover os arquivos alterados indesejados:
-	``` 
-	git checkout -- pom.xml
-	git checkout -- "java/impl/PlatformBackendServer.java" 
-	```
-3. Adicionar os arquivos alterados:
-	``` 
-	git add .
-	``` 
-4. Efetuar o commit:
-	``` 
-	git commit -m "#APG-1361 - Removido verificação de permissão não necessária"
-	``` 
-5. Efetuar o push:
-	``` 
-	git push -u origin bugfix/apg-1361
-	``` 	
-
- * Para ver todos os branches locais:
-	**git branch --list**
-
- * Para ver todos os branches remotos:
-	**git branch -r**
-
- * Para ver as mudanças de um arquivo por vez:
-	**git diff arquivo.txt**
-
- * For delete a local branch:
-	**git branch -d + name_local_branch**
-	
- * For change the name of the local branch:
-	**git branch -m new_name**
-	
- * For create a new tag:
-	**git tag -a V1.0 -m "my version 1.0"** <br>
-	**git push origin --tags**
-
-
-## Java
-
-### Atalhos:
-* **CTRL + SHIFT + O:** para importar bibliotecas
-* **F4 ou Ctrl + Alt + G:** abre as referencias da classes, método ou propriedade (como o Shift + F12 do visual studio)
-* **Ctrl + Shift + R:** como o Ctrl + , do Visual Studio
-* **F3:** vai até a implemetação do método/variável
-* **Ctrl + H:** para pesquisar qualquer texto dentro de qualquer fonte
-* **Ctrl + Shift + H:** para pesquisar qualquer arquivo fonte dentro do workspace
-* **Ctrl+Alt+H:** (é necessário estar no modo de visualização: Java EE) > pesquisa no workspace por todas as ocorrências do elemento sobre o qual o cursor está posicionado.
-* **Ctls+Shift+O:** add imports
-
-## Gerais
-
-  * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
- 
- ## SQL Server
+## SQL Server
  
  ### Como alterar as propriedades da instância 
  Caso não estiver conseguindo logar no sql server com o usuário 'sa' pode ser por que a instancia está configurada para apenas autenticação do windows. Para corrigir isso, logar com autenticação windows e depois clicar com botão direito sobre a instancia '.\sqlexpress' (ou outra) -> Propriedades -> Segurança -> Selecionar: Modo de autenticação do Sql Server e do windows
@@ -192,6 +133,69 @@ imp usuario_destino_restore/senha@banco file=c:\base.dmp log=c:\base.log commit=
 imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP log=C:\Publica\base_Felipe\base.log commit=y fromuser=sdenew10 touser=sdefelipelocal
 ```
 
+
+## Git
+
+ ### Para fazer um commit de qualquer alteração:
+1. Para criar e já mudar para o branch: 
+	``` 
+	git checkout -b bugfix/1361
+	``` 
+2. Remover os arquivos alterados indesejados:
+	``` 
+	git checkout -- pom.xml
+	git checkout -- "java/impl/PlatformBackendServer.java" 
+	```
+3. Adicionar os arquivos alterados:
+	``` 
+	git add .
+	``` 
+4. Efetuar o commit:
+	``` 
+	git commit -m "#APG-1361 - Removido verificação de permissão não necessária"
+	``` 
+5. Efetuar o push:
+	``` 
+	git push -u origin bugfix/apg-1361
+	``` 	
+
+ * Para ver todos os branches locais:
+	**git branch --list**
+
+ * Para ver todos os branches remotos:
+	**git branch -r**
+
+ * Para ver as mudanças de um arquivo por vez:
+	**git diff arquivo.txt**
+
+ * For delete a local branch:
+	**git branch -d + name_local_branch**
+	
+ * For change the name of the local branch:
+	**git branch -m new_name**
+	
+ * For create a new tag:
+	**git tag -a V1.0 -m "my version 1.0"** <br>
+	**git push origin --tags**
+
+
+## Java
+
+### Atalhos:
+* **CTRL + SHIFT + O:** para importar bibliotecas
+* **F4 ou Ctrl + Alt + G:** abre as referencias da classes, método ou propriedade (como o Shift + F12 do visual studio)
+* **Ctrl + Shift + R:** como o Ctrl + , do Visual Studio
+* **F3:** vai até a implemetação do método/variável
+* **Ctrl + H:** para pesquisar qualquer texto dentro de qualquer fonte
+* **Ctrl + Shift + H:** para pesquisar qualquer arquivo fonte dentro do workspace
+* **Ctrl+Alt+H:** (é necessário estar no modo de visualização: Java EE) > pesquisa no workspace por todas as ocorrências do elemento sobre o qual o cursor está posicionado.
+* **Ctls+Shift+O:** add imports
+
+## Gerais
+
+  * Para não precisar reiniciar o servidor de aplicação a cada alteração pode-se usar o [Nodemon](https://nodemon.io/)
+ 
+ 
 # Windows
 
 ## Generals
