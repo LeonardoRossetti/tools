@@ -199,7 +199,30 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 
 ### Tips
 * **To create a page automatically:** ionic generate page my-page-name
+* **To create a component:** ionic generate component my-component-name
  
+### Lifecycle events
+**ionViewWillEnter: void**
+É executado quando a página está preseter a entrar e se tornar a pagina ativa.
+
+**ionViewDidEnter: void**
+É executado quando a página foi totalmente inserida e é agora a pagina ativa. Este exento irá disparar se for a primeira chamada ou se a pagina estiver em cache.
+
+**ionViewWillLeave: void**
+Executa quando a página está prester a sair e deixar de ser a pagina ativa.
+
+**ionViewDidLeave: void**
+Executa quando a página terminou de sair e já não é mais a pagina ativa.
+
+**ionViewWillUnload: void**
+Executa quando a página está prester a ser destruida e seus elementos removidos. Ou seja, logo após o ionViewDidLeave.
+
+**ionViewCanEnter: boolean / Promise <void>**
+É executado antes da view/página poder entrar. Isso pode ser usado como uma espécie de "guarda" em páginas autenticadas em que voce precisa verificar se o usuário tem permissao de acesso.
+
+**ionViewCanLeave: boolean / Promise <void>**
+É executado antes da view/página poder sair. Isso pode ser usado como uma espécie de "guarda" nas páginas em que voce precisa verificar se as informações foram salvas por exemplo, ou para fazer logoff do usuário.
+
 
 
 # Windows
