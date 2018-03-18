@@ -203,19 +203,19 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
  
 ### Lifecycle events
 **ionViewWillEnter: void**
-É executado quando a página está preseter a entrar e se tornar a pagina ativa.
+É executado quando a página está prestes a entrar e se tornar a pagina ativa.
 
 **ionViewDidEnter: void**
 É executado quando a página foi totalmente inserida e é agora a pagina ativa. Este exento irá disparar se for a primeira chamada ou se a pagina estiver em cache.
 
 **ionViewWillLeave: void**
-Executa quando a página está prester a sair e deixar de ser a pagina ativa.
+Executa quando a página está prestes a sair e deixar de ser a pagina ativa.
 
 **ionViewDidLeave: void**
 Executa quando a página terminou de sair e já não é mais a pagina ativa.
 
 **ionViewWillUnload: void**
-Executa quando a página está prester a ser destruida e seus elementos removidos. Ou seja, logo após o ionViewDidLeave.
+Executa quando a página está prestes a ser destruida e seus elementos removidos. Ou seja, logo após o ionViewDidLeave.
 
 **ionViewCanEnter: boolean / Promise <void>**
 É executado antes da view/página poder entrar. Isso pode ser usado como uma espécie de "guarda" em páginas autenticadas em que voce precisa verificar se o usuário tem permissao de acesso.
@@ -223,7 +223,16 @@ Executa quando a página está prester a ser destruida e seus elementos removido
 **ionViewCanLeave: boolean / Promise <void>**
 É executado antes da view/página poder sair. Isso pode ser usado como uma espécie de "guarda" nas páginas em que voce precisa verificar se as informações foram salvas por exemplo, ou para fazer logoff do usuário.
 
-
+### Executar aplicacoes em todos os dispositivos com layout de android/ios:
+No arquivo **app.module.js** no codigo Imports[] um novo parametro, ex: 
+	``` 
+	imports: [
+		IonicModule.forRoot(MyApp, {
+			mode: 'md' //para android
+			mode: 'ios' //para ios
+		})
+		]
+    ```
 
 # Windows
 
