@@ -199,6 +199,7 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 
 ### Tips
 * **To see all devices connected on USB:** adb devices
+* **To add Platform Android in project:** ionic cordova platform add android --save
 * **To create a page automatically:** ionic generate page my-page-name
 * **To create a component:** ionic generate component my-component-name
  
