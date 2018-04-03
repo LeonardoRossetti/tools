@@ -203,6 +203,17 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 * **To add Platform Android in project:** ionic cordova platform add android --save
 * **To create a page automatically:** ionic generate page my-page-name
 * **To create a component:** ionic generate component my-component-name
+
+### Publishing your app
+* **** 
+* **To do a build to generate an .apk:** ionic cordova build --release android
+* **Or:** ionic cordova build android --release --prod
+* **Necessário rodar todos os comandos na raiz do projeto. Trazer o .apk pra raiz pra rodar o segundo comando:**
+* **Gerar keystore:** keytool -genkey -v -keystore my-release-key.keystore -alias ksapp -keyalg RSA -keysize 2048 -validity 10000
+* **Assinar apk:** jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk ksapp
+* **Zipar apk (foi necessário trazer o zipalign.exe para a pasta raíz do projeto para poder rodar este comando):** ./zipalign -v 4 app-release-unsigned.apk ksapp.apk
+
+* **Após isso, teremos o ksapp.apk pronto para ser adicionado na google play**
  
 ### Lifecycle events
 **ionViewWillEnter: void**
