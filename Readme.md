@@ -205,7 +205,6 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
 * **To create a component:** ionic generate component my-component-name
 
 ### Publishing your app
-* **** 
 * **To do a build to generate an .apk:** ionic cordova build --release android
 * **Or:** ionic cordova build android --release --prod
 * **Necessário rodar todos os comandos na raiz do projeto. Trazer o .apk pra raiz pra rodar o segundo comando:**
