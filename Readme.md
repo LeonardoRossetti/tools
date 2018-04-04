@@ -177,7 +177,7 @@ imp sdefelipelocal/sdefelipelocal@xe file=C:\Publica\base_Felipe\bkp581011.DMP l
  * For change the name of the local branch:
 	**git branch -m new_name**
 	
- * For create a new tag:
+ * For create a new TAG:
 	**git tag -a V1.0 -m "my version 1.0"** <br>
 	**git push origin --tags**
 
