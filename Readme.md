@@ -247,6 +247,9 @@ No arquivo **app.module.js** no codigo Imports[] um novo parametro, ex:
 		]
     ```
 
+### Para verificar o service worker (cache) do chrome:
+**chrome://serviceworker-internals/**
+
 # Windows
 
 ## Generals
