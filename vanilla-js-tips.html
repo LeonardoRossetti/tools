@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vanilla JS Tips</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family:Arial;
+            width: 90%;
+            margin: 0 auto;
+        }
+        pre {
+            margin-top: -10px;
+            padding: 3px 0;
+        }
+        section {
+            border-top: 3px solid;
+            margin-top: 20px;
+        }
+        .title {
+            width: fit-content;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Vanilla JS Tips</h3>
+        <hr />
+        <nav>
+            <a href="#data-attributes">Using Data- Attributes with JavaScript</a><br />
+            <a href="#vanillaJsInsteadJQuery">Vanilla JS instead jQuery</a>
+        </nav>
+    </header>
+    <section id="data-attributes">
+        <h4 class="title">Data Attributes | <a href="#top">Top</a></h4>
+        <p>
+            As you know, you can add information to HTML elements using custom data- attributes.  You can name these data- attributes however you'd like.  There are a few rules for working with the dataset API:
+        </p>
+        <ul>                
+            <li>element.dataset cannot be referenced directly -- you will receive an error</li>
+            <li>You reference data- property names by camel-casing their attribute names</li>
+            <li>The name cannot start with xml</li>
+            <li>The name cannot contain uppercase letters</li>
+        </ul>
+        <p>Assume the following element is within the page:</p>        
+        <pre>
+            &lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="This is the value"&gt;&lt;/div&gt;
+        </pre>
+        <p>To retrieve the data-id attribute value, you'd code:</p>
+        <pre>
+            // Get the element
+            var element = document.getElementById("myDiv");
+            
+            // Get the id
+            var id = element.dataset.id;
+            // Or
+            var my_id = element.getAttribute('data-id'); // my_id = 'myId'
+        </pre>
+        <p>To retrieve the data-my-custom-key attribute, you'd code:</p>
+        <pre>
+            // Retrieves "data-my-custom-key"
+            var customKey = element.dataset.myCustomKey;
+            // Or
+            var customKey = element.getAttribute('data-my-custom-key');
+        </pre>
+        <p>Assigning the value to a custom attribute you would look like:</p>
+        <pre>
+            // Sets the value to something else
+            element.dataset.myCustomKey = "Some other value";
+            // Or
+            element.setAttribute('data-my-custom-key','Some other value');
+            
+            // Element would be:
+            //&lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="Some other value"&gt;&lt;/div&gt;
+        </pre>
+        <p>If a data- attribute you programmatically set does not exist, it will be created:</p>
+        <pre>
+            // Set new data- attribute
+            element.dataset.mootoolsFtw = "true";
+            // or
+            element.setAttribute('data-mootools-ftw', 'true');
+            
+            // Element would be:
+            //&lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="Some other value" data-mootools-ftw="true"&gt;&lt;/div&gt;
+        </pre>
+        <p>If, at some point in your script, a specific data- attribute becomes redundant and is no longer needed, it is also possible to completely remove that attribute from the DOM element by setting it to a value of null.</p>
+        <pre>
+            element.dataset.mootoolsFtw = null;
+            // Or
+            element.SetAttribute('data-mootools-ftw', 'null');
+        </pre>
+        <p>While developing your application, you may find it useful to be able to select elements based on the presence of — or indeed the specific values of — their custom data- attributes. This can be achieved quickly and easily using querySelectorAll as shown below:</p>
+        <pre>
+            // Select all elements with a 'data-flowering' attribute
+            document.querySelectorAll('[data-flowering]');
+            
+            // Select all elements with red leaves
+            document.querySelectorAll('[data-foliage-colour="red"]');
+        </pre>        
+        <h4>A word of warning</h4>
+        <p>
+            As data attributes become more widely used, the potential for clashes in naming conventions becomes much greater. If you use an unimaginative attribute name such as data-height, then it is likely you will eventually come across a library or plugin that uses the same attribute name. Multiple scripts getting and setting a common data- attribute will probably cause chaos. In order to avoid this, I encourage people to choose a standard string (perhaps the site/plugin name) to prefix all their data- attributes — e.g. data-yourSite-height or data-my-plugin-height.
+        </p>
+    </section>
+    <section id="vanillaJsInsteadJQuery">
+        <h4 class="title">Vanilla JS instead jQuery | <a href="#top">Top</a></h4>
+        <p>
+            HTML5 does not just mean some extra HTML elements; HTML5 covers a large "mass" technology and also, along with it comes ECMAScript 5, the future of JavaScript. Combining HTML5 APIs that require JavaScript, for the most part, we need to adopt a more native structure to work with every day that jQuery and the like become less important.
+        </p>
+        <h4>Selectors</h4>
+        <p>For classes:</p>
+        <pre>
+            // jQuery
+            $('.myClass');
+            
+            // JavaScript
+            document.getElementsByClassName('myClass');
+        </pre>
+        <p>This returns a NodeList. A Node is a JavaScript term for the Object element and a NodeList is an ordered list of Nodes.</p>
+        <p>For ID:</p>
+        <pre>
+            // jQuery
+            $('#myID');
+            
+            // JavaScript
+            document.getElementById('myID');
+        </pre>
+        <p>This returns a simple node.</p>
+        <p>Tags:</p>
+        <pre>
+            // jQuery
+            $('div');
+            
+            // JavaScript
+            document.getElementsByTagName('div');
+        </pre>
+        <p>This returns a NodeList.</p>
+        <p>The magic behind querySelector is impressive, it's a multipurpose native tool that can be used in many cases - and that's pure JavaScript. There are two types of querySelector: the first one that is <code>document.querySelector()</code> returns the first Node of the NodeList, regardless of how many Node Objects can be found; the second is <code>document.querySelectorAll()</code>, which returns a NodeList every time.</p>
+        <pre>
+            /*
+            * Classes
+            */
+            // Returns the first element with class name is myClass
+            document.querySelector('.myClass');
+            
+            // Returns a NodeList with all instances of .myClass
+            document.querySelectorAll('.myClass');
+            
+            /*
+            * ID
+            */
+            // Returns the element with ID myID
+            document.querySelector('#myID');
+            
+            /*
+            * Tags
+            */
+            // Returns a NodeList with all instances of 'div'
+            document.querySelectorAll('div');
+        </pre>
+        <p><code>querySelectorAll</code> is powerful, and definitely the future. It also supports more complicated selectors:</p>
+        <pre>
+            // Returns the last node of a list of .someList
+            document.querySelector('ul.someList li:last-child');
+            
+            // Returns some attribute data-*
+            document.querySelectorAll('[data-toggle]');
+        </pre>
+        <h4>Class manipulation</h4>
+        <p>Add class:</p>
+        <pre>
+            // jQuery
+            $('div').addClass('myClass');
+            
+            // JavaScript
+            var div = document.querySelector('div');
+            div.classList.add('myClass');
+        </pre>
+        <p>Remove class:</p>
+        <pre>
+            // jQuery
+            $('div').removeClass('myClass');
+            
+            // JavaScript
+            var div = document.querySelector('div');
+            div.classList.remove('myClass');
+        </pre>
+        <p>Toggle Class (Toggle between adding and removing a class name from an element with JavaScript):</p>
+        <pre>
+            // jQuery
+            $('div').toggleClass('myClass');
+            
+            // JavaScript
+            var div = document.querySelector('div');
+            div.classList.toggle('myClass');
+        </pre>
+
+
+
+
+
+    </section>
+
+   
+
+</body>
+</html>
