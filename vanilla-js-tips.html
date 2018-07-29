@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vanilla JS Tips</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body {
-            font-family:Arial;
-            width: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 60%;
             margin: 0 auto;
+            margin-top: 50px;
         }
         pre {
             margin-top: -10px;
             padding: 3px 0;
+            background-color: #263238;
+            color: #EEFFFF;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         section {
             border-top: 3px solid;
@@ -24,16 +30,47 @@
             width: fit-content;
             font-weight: bold;
         }
+        .comment{
+            color:#91C891;
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h3>Vanilla JS Tips</h3>
-        <hr />
-        <nav>
-            <a href="#data-attributes">Using Data- Attributes with JavaScript</a><br />
-            <a href="#vanillaJsInsteadJQuery">Vanilla JS instead jQuery</a>
-        </nav>
+        
+        <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="#top">Vanilla JS Tips</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">JavaScript <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#data-attributes">Data Attributes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#vanillaJsInsteadJQuery">Vanilla JS instead jQuery</a></li>
+                        </ul>
+                </li>
+                <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"># <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                            <li><a href="#">Page 1-2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" action="">
+                    <div class="input-group">
+                      <input type="text" id="search" class="form-control" placeholder="Search" name="search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </nav> -->
     </header>
     <section id="data-attributes">
         <h4 class="title">Data Attributes | <a href="#top">Top</a></h4>
@@ -46,59 +83,59 @@
             <li>The name cannot start with xml</li>
             <li>The name cannot contain uppercase letters</li>
         </ul>
-        <p>Assume the following element is within the page:</p>        
+        <p>Assume the following element is within the page:</p>       
         <pre>
             &lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="This is the value"&gt;&lt;/div&gt;
         </pre>
         <p>To retrieve the data-id attribute value, you'd code:</p>
         <pre>
-            // Get the element
+            <span class="comment">// Get the element</span>
             var element = document.getElementById("myDiv");
             
-            // Get the id
+            <span class="comment">// Get the id</span>
             var id = element.dataset.id;
-            // Or
-            var my_id = element.getAttribute('data-id'); // my_id = 'myId'
+            <span class="comment">// Or</span>
+            var my_id = element.getAttribute('data-id'); <span class="comment">// my_id = 'myId'</span>
         </pre>
         <p>To retrieve the data-my-custom-key attribute, you'd code:</p>
         <pre>
-            // Retrieves "data-my-custom-key"
+            <span class="comment">// Retrieves "data-my-custom-key"</span>
             var customKey = element.dataset.myCustomKey;
-            // Or
+            <span class="comment">// Or</span>
             var customKey = element.getAttribute('data-my-custom-key');
         </pre>
         <p>Assigning the value to a custom attribute you would look like:</p>
         <pre>
-            // Sets the value to something else
+            <span class="comment">// Sets the value to something else</span>
             element.dataset.myCustomKey = "Some other value";
-            // Or
+            <span class="comment">// Or</span>
             element.setAttribute('data-my-custom-key','Some other value');
             
-            // Element would be:
-            //&lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="Some other value"&gt;&lt;/div&gt;
+            <span class="comment">// Element would be:</span>
+            <span class="comment">//&lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="Some other value"&gt;&lt;/div&gt;</span>
         </pre>
         <p>If a data- attribute you programmatically set does not exist, it will be created:</p>
         <pre>
-            // Set new data- attribute
+            <span class="comment">// Set new data- attribute</span>
             element.dataset.mootoolsFtw = "true";
-            // or
+            <span class="comment">// or</span>
             element.setAttribute('data-mootools-ftw', 'true');
             
-            // Element would be:
-            //&lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="Some other value" data-mootools-ftw="true"&gt;&lt;/div&gt;
+            <span class="comment">// Element would be:</span>
+            <span class="comment">//&lt;div id="myDiv" data-name="myDiv" data-id="myId" data-my-custom-key="Some other value" data-mootools-ftw="true"&gt;&lt;/div&gt;</span>
         </pre>
         <p>If, at some point in your script, a specific data- attribute becomes redundant and is no longer needed, it is also possible to completely remove that attribute from the DOM element by setting it to a value of null.</p>
         <pre>
             element.dataset.mootoolsFtw = null;
-            // Or
+            <span class="comment">// Or</span>
             element.SetAttribute('data-mootools-ftw', 'null');
         </pre>
         <p>While developing your application, you may find it useful to be able to select elements based on the presence of — or indeed the specific values of — their custom data- attributes. This can be achieved quickly and easily using querySelectorAll as shown below:</p>
         <pre>
-            // Select all elements with a 'data-flowering' attribute
+            <span class="comment">// Select all elements with a 'data-flowering' attribute</span>
             document.querySelectorAll('[data-flowering]');
             
-            // Select all elements with red leaves
+            <span class="comment">// Select all elements with red leaves</span>
             document.querySelectorAll('[data-foliage-colour="red"]');
         </pre>        
         <h4>A word of warning</h4>
@@ -114,28 +151,28 @@
         <h4>Selectors</h4>
         <p>For classes:</p>
         <pre>
-            // jQuery
+            <span class="comment">// jQuery</span>
             $('.myClass');
             
-            // JavaScript
+            <span class="comment">// JavaScript</span>
             document.getElementsByClassName('myClass');
         </pre>
         <p>This returns a NodeList. A Node is a JavaScript term for the Object element and a NodeList is an ordered list of Nodes.</p>
         <p>For ID:</p>
         <pre>
-            // jQuery
+            <span class="comment">// jQuery</span>
             $('#myID');
             
-            // JavaScript
+            <span class="comment">// JavaScript</span>
             document.getElementById('myID');
         </pre>
         <p>This returns a simple node.</p>
         <p>Tags:</p>
         <pre>
-            // jQuery
+            <span class="comment">// jQuery</span>
             $('div');
             
-            // JavaScript
+            <span class="comment">// JavaScript</span>
             document.getElementsByTagName('div');
         </pre>
         <p>This returns a NodeList.</p>
@@ -144,64 +181,156 @@
             /*
             * Classes
             */
-            // Returns the first element with class name is myClass
+            <span class="comment">// Returns the first element with class name is myClass</span>
             document.querySelector('.myClass');
             
-            // Returns a NodeList with all instances of .myClass
+            <span class="comment">// Returns a NodeList with all instances of .myClass</span>
             document.querySelectorAll('.myClass');
             
             /*
             * ID
             */
-            // Returns the element with ID myID
+            <span class="comment">// Returns the element with ID myID</span>
             document.querySelector('#myID');
             
             /*
             * Tags
             */
-            // Returns a NodeList with all instances of 'div'
+            <span class="comment">// Returns a NodeList with all instances of 'div'</span>
             document.querySelectorAll('div');
         </pre>
         <p><code>querySelectorAll</code> is powerful, and definitely the future. It also supports more complicated selectors:</p>
         <pre>
-            // Returns the last node of a list of .someList
+            <span class="comment">// Returns the last node of a list of .someList</span>
             document.querySelector('ul.someList li:last-child');
             
-            // Returns some attribute data-*
+            <span class="comment">// Returns some attribute data-*</span>
             document.querySelectorAll('[data-toggle]');
         </pre>
         <h4>Class manipulation</h4>
         <p>Add class:</p>
         <pre>
-            // jQuery
+            <span class="comment">// jQuery</span>
             $('div').addClass('myClass');
             
-            // JavaScript
+            <span class="comment">// JavaScript</span>
             var div = document.querySelector('div');
             div.classList.add('myClass');
         </pre>
         <p>Remove class:</p>
         <pre>
-            // jQuery
+            <span class="comment">// jQuery</span>
             $('div').removeClass('myClass');
             
-            // JavaScript
+            <span class="comment">// JavaScript</span>
             var div = document.querySelector('div');
             div.classList.remove('myClass');
         </pre>
         <p>Toggle Class (Toggle between adding and removing a class name from an element with JavaScript):</p>
         <pre>
-            // jQuery
+            <span class="comment">// jQuery</span>
             $('div').toggleClass('myClass');
             
-            // JavaScript
+            <span class="comment">// JavaScript</span>
             var div = document.querySelector('div');
             div.classList.toggle('myClass');
         </pre>
+        <h4>Looping em NodeList</h4>
+        <p>
+            One big difference from jQuery is the fact that in pure JavaScript we need to generate a loop using <code>getElementsByClassName()</code> or <code>querySelectorAll()</code>. For example, in jQuery, whether in a class or a NodeList, the code is identical! The same does not happen with native JavaScript. For example, to add a class in both (note the difference in the last two JavaScript methods):
+        </p>
+        <pre>
+            <span class="comment">// jQuery</span>
+            var someElem = $('.someElem');
+            someElem.addClass('myClass');
+            
+            <span class="comment">// JavaScript: adds the class only on the first node</span>
+            var someElem = document.querySelector('.someElem');
+            someElem.classList.add('myClass');
+            
+            <span class="comment">// JavaScript: adds the class to all NodeList Nodes</span>
+            var someElem = document.querySelectorAll('.someElem');
+            for ( var i = 0; i < someElem.length; i++ ) {
+                someElem[i].classList.add('myClass');
+            }
+        </pre>
+        <h4>Attributes, setting, getting and removal</h4>
+        <p>Set Attributes:</p>
+        <pre>
+            <span class="comment">// jQuery</span>
+            $('.myClass').attr('disabled', true);
+            
+            <span class="comment">// JavaScript</span>
+            document.querySelector('.myClass').setAttribute('disabled', true);
+        </pre>
+        <p>Remove Attributes:</p>
+        <pre>
+            <span class="comment">// jQuery</span>
+            $('.myClass').removeAttr('disabled');
+            
+            <span class="comment">// JavaScript</span>
+            document.querySelector('.myClass').removeAttribute('disabled');
+        </pre>
+        <p>Get Attributes:</p>
+        <pre>
+            <span class="comment">// jQuery</span>
+            console.log($('.myClass').attr('title'));
+            
+            <span class="comment">// JavaScript</span>
+            console.log(document.querySelector('.myClass').getAttribute('title'));
+        </pre>
+        <p>Data-* Attributes:</p>
+        <pre>
+            &lt;div class="myElem" data-username="Todd"&gt;&lt;/div&gt;
 
+            &lt;script&gt;
+            <span class="comment">// jQuery</span>
+            console.log($('.myElem').data('username')); <span class="comment">// Logs 'Todd'</span>
+            
+            <span class="comment">// JavaScript: usa o método getAttribute</span>
+            console.log(document.querySelector('.myElem').getAttribute('data-username'));
+            &lt;/script&gt;
+            </script>
+        </pre>
+        <h4>Parsing JSON</h4>
+        <p>There are possible tricks to be done for JSON parsing and object creation with pure and simple JavaScript. It's pretty much the same thing! Consider the example of taking a custom <code>data-*</code> attribute for a JSON and "parsing" to then make a hook for this same object:</p>
+        <pre>
+            &lt;div class="myElem" data-user='{ "name" : "Todd", "id" : "01282183" }'&gt;&lt;/div&gt;
 
-
-
+            &lt;script&gt;
+            <span class="comment">// jQuery</span>
+            var myElem = $('.myElem').data('user'); <span class="comment">// Pega o JSON</span>
+            var myJSON = $.parseJSON(myElem); <span class="comment">// Parsing da string no objeto JSON</span>
+            console.log(myJSON.name); <span class="comment">// Objeto JSON, retorna 'Todd'</span>
+            console.log(myJSON.id); <span class="comment">// Objeto JSON, retorna '01282183'</span>
+            
+            <span class="comment">// JavaScript</span>
+            var myElem = document.querySelector('.myElem').getAttribute('data-user');
+            var myJSON = JSON.parse(myElem);
+            console.log(myJSON.name); <span class="comment">// Objeto JSON, retorna 'Todd'</span>
+            console.log(myJSON.id); <span class="comment">// Objeto JSON, retorna '01282183'</span>
+            &lt;/script&gt;
+        </pre>
+        <h4>Events</h4>
+        <p>A simple click event in jQuery looks like:</p>
+        <pre>
+            $(elem).click(function (){
+                <span class="comment">// ...</span>
+            });
+        </pre>
+        <p>Or, to use what's most current and recommended:</p>
+        <pre>
+            $(elem).on('click', function (){
+                <span class="comment">// ...</span>
+            });
+        </pre>
+        <p>It is also possible to chain the events together:</p>
+        <pre>
+            <span class="comment">//This links some events to the function. Any one of them will run it. In addition, in this way you can easily remove or add some other.</span>
+            $(elem).on('click focus keyup', function (){
+                <span class="comment">// ...</span>
+            });
+        </pre>
 
     </section>
 
