@@ -11,9 +11,11 @@
     <style>
         body {
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 5px 10px;
+        }
+        .content{
             width: 60%;
             margin: 0 auto;
-            margin-top: 50px;
         }
         pre {
             margin-top: -10px;
@@ -34,12 +36,92 @@
             color:#91C891;
         }
 
+
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            padding-right: 15px;
+        }
+
+        @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+        }
+
+        .dropdown-menu{
+            background-color: #111;
+        }
+
+        .dropdown-menu li a{
+            color: #818181;
+            font-size: 17px;
+        }
+
     </style>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </head>
 <body>
+    <span style="font-size:30px;cursor:pointer; position: fixed;" onclick="openNav()">&#9776; open</span>
+    <div class="content">
     <header>
-        
-         <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#top">Home</a>
+            <a href="#data-attributes">Data Attributes</a>
+            <ul class="nav">
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Vanilla JS <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#vanillaJsInsteadJQuery">Vanilla JS instead jQuery</a></li>
+                        <li><a href="#classManipulation">Class Manipulation</a></li>
+                        <li><a href="#loopingNodeList">Looping em NodeList</a></li>
+                        <li><a href="#attributes">Attributes</a></li>
+                        <li><a href="#parsingJson">Parsing JSON</a></li>
+                        <li><a href="#events">Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+         <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                 <a class="navbar-brand" href="#top">Vanilla JS Tips</a>
@@ -70,7 +152,7 @@
                     </div>
                   </form>
             </div>
-        </nav>
+        </nav> -->
     </header>
     <section id="data-attributes">
         <h4 class="title">Data Attributes | <a href="#top">Top</a></h4>
@@ -207,7 +289,7 @@
             <span class="comment">// Returns some attribute data-*</span>
             document.querySelectorAll('[data-toggle]');
         </pre>
-        <h4>Class manipulation</h4>
+        <h4 id="classManipulation">Class manipulation</h4>
         <p>Add class:</p>
         <pre>
             <span class="comment">// jQuery</span>
@@ -235,7 +317,7 @@
             var div = document.querySelector('div');
             div.classList.toggle('myClass');
         </pre>
-        <h4>Looping em NodeList</h4>
+        <h4 id="loopingNodeList">Looping em NodeList</h4>
         <p>
             One big difference from jQuery is the fact that in pure JavaScript we need to generate a loop using <code>getElementsByClassName()</code> or <code>querySelectorAll()</code>. For example, in jQuery, whether in a class or a NodeList, the code is identical! The same does not happen with native JavaScript. For example, to add a class in both (note the difference in the last two JavaScript methods):
         </p>
@@ -254,7 +336,7 @@
                 someElem[i].classList.add('myClass');
             }
         </pre>
-        <h4>Attributes, setting, getting and removal</h4>
+        <h4 id="attributes">Attributes, setting, getting and removal</h4>
         <p>Set Attributes:</p>
         <pre>
             <span class="comment">// jQuery</span>
@@ -292,7 +374,7 @@
             &lt;/script&gt;
             </script>
         </pre>
-        <h4>Parsing JSON</h4>
+        <h4 id="parsingJson">Parsing JSON</h4>
         <p>There are possible tricks to be done for JSON parsing and object creation with pure and simple JavaScript. It's pretty much the same thing! Consider the example of taking a custom <code>data-*</code> attribute for a JSON and "parsing" to then make a hook for this same object:</p>
         <pre>
             &lt;div class="myElem" data-user='{ "name" : "Todd", "id" : "01282183" }'&gt;&lt;/div&gt;
@@ -311,7 +393,7 @@
             console.log(myJSON.id); <span class="comment">// Objeto JSON, retorna '01282183'</span>
             &lt;/script&gt;
         </pre>
-        <h4>Events</h4>
+        <h4 id="events">Events</h4>
         <p>A simple click event in jQuery looks like:</p>
         <pre>
             $(elem).click(function (){
@@ -335,6 +417,6 @@
     </section>
 
    
-
+</div>
 </body>
 </html>
