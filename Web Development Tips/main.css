@@ -1,0 +1,28 @@
+body {
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.panel {
+    background-color: lightgray;
+    width: 100%;
+    border: 1px solid black;
+
+}
+
+.panel h1 {
+    background-color: darkgrey;
+    text-transform: uppercase;
+    margin: 5px;
+    padding: 2px;
+    color: white;
+    text-shadow: 0px 5px 5px black;
+} 
+
+.shadow-example{
+    box-shadow: 4px 4px 5px black, -4px -4px 5px red;
+}
+.shadow-example h2 {
+    color: white;
+    text-shadow: 10px 5px rgba(0,0,0,0.5); /*opacity*/
+}
