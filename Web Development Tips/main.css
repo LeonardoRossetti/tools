@@ -7,6 +7,7 @@ body {
     background-color: lightgray;
     width: 100%;
     border: 1px solid black;
+    margin-bottom: 10px;
 
 }
 
@@ -19,10 +20,43 @@ body {
     text-shadow: 0px 5px 5px black;
 } 
 
+/*SHADOW*/
 .shadow-example{
     box-shadow: 4px 4px 5px black, -4px -4px 5px red;
 }
+
 .shadow-example h2 {
     color: white;
     text-shadow: 10px 5px rgba(0,0,0,0.5); /*opacity*/
+}
+
+/*ANIMATION*/
+
+/*Create an animation*/
+@keyframes box-animation {
+    from{
+        background: red;
+        border-radius: 0px;
+        left: 0px;
+
+    }
+    to{
+        background: yellow;
+        border-radius: 300px;
+        left:90%;
+    }
+}
+
+.animation {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+/*    animation-name: box-animation;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+*/
+    animation: box-animation 5s 1s 2 alternate;
 }
