@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> Frames em HTML </title>
+  <meta name="description" content="Framset - Como usar frames em sites HTML">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+ </head>
+ <body>
+    <span style="font-size:30px;cursor:pointer; position: fixed;" onclick="openNav()">&#9776; open</span>
+    <div class="content">
+    <header>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#top">Home</a>
+            <a href="#data-attributes">Data Attributes</a>
+            <ul class="nav">
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Vanilla JS <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vanilla-js-tips.html#vanillaJsInsteadJQuery" target="main-frame">Vanilla JS instead jQuery</a></li>
+                        <li><a href="vanilla-js-tips.html#classManipulation" target="main-frame">Class Manipulation</a></li>
+                        <li><a href="vanilla-js-tips.html#loopingNodeList" target="main-frame">Looping em NodeList</a></li>
+                        <li><a href="vanilla-js-tips.html#attributes" target="main-frame">Attributes</a></li>
+                        <li><a href="vanilla-js-tips.html#parsingJson" target="main-frame">Parsing JSON</a></li>
+                        <li><a href="vanilla-js-tips.html#events" target="main-frame">Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="WebDevelopmentTips/index.html" target="main-frame">CSS3 Tips</a>
+        </div>
+    </header>
+    </div>
+    <iframe src="vanilla-js-tips.html" width="90%" height="1000px" style="float:right; border: none;" name="main-frame"></iframe>
+ </body>
+</html>

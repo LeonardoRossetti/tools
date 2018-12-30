@@ -60,3 +60,16 @@ body {
 */
     animation: box-animation 5s 1s 2 alternate;
 }
+
+.box-transition {
+    background-color: red;
+    width: 200px;
+    height: 30px;
+}
+
+.box-transition:hover {
+    background-color: yellow;
+    width: 500px;
+    transition: background 3s, width 2s;
+    /*transition: all: 2s; */
+}
