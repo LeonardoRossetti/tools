@@ -73,3 +73,13 @@ body {
     transition: background 3s, width 2s;
     /*transition: all: 2s; */
 }
+
+.marcador{
+	background: #fe9d9d;
+	border:1px solid #f94646;
+}
+
+.marcador2{
+	background: #5bf946;
+	border:1px solid #36ae26;
+}
